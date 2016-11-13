@@ -29,6 +29,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("count",count);
+        //...save more value
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        count = savedInstanceState.getInt("count");
+        //...restor more
+        super.onRestoreInstanceState(savedInstanceState);
+    }
 }
 
 
